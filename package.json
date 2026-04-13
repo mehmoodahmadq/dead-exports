@@ -1,0 +1,46 @@
+{
+  "name": "dead-exports",
+  "version": "0.1.0",
+  "description": "Find unused exports across your JavaScript/TypeScript codebase",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "bin": {
+    "dead-exports": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "lint": "eslint src"
+  },
+  "keywords": [
+    "dead-code",
+    "unused-exports",
+    "static-analysis",
+    "typescript",
+    "esm",
+    "treeshaking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^11.0.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
