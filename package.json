@@ -8,7 +8,7 @@
     ".": "./dist/index.js"
   },
   "bin": {
-    "dead-exports": "./dist/cli.js"
+    "dead-exports": "dist/cli.js"
   },
   "files": [
     "dist"
