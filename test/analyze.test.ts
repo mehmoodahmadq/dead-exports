@@ -36,6 +36,26 @@ describe("analyze", () => {
     expect(result.deadExports).toHaveLength(0);
   });
 
+  test("star import marks all exports as used", async () => {
+    const result = await analyze({
+      cwd: path.join(fixturesDir, "star"),
+    });
+
+    expect(result.deadExports).toHaveLength(0);
+    expect(result.scannedFiles).toBe(2);
+  });
+
+  test("--exclude glob skips matching files", async () => {
+    // Excluding the consumer means nothing imports usedHelper — it becomes dead too
+    const result = await analyze({
+      cwd: path.join(fixturesDir, "dead"),
+      exclude: ["**/consumer.ts"],
+    });
+
+    const deadNames = result.deadExports.map((d) => d.name);
+    expect(deadNames).toContain("usedHelper");
+  });
+
   test("result shape is correct", async () => {
     const result = await analyze({
       cwd: path.join(fixturesDir, "dead"),
