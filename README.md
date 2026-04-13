@@ -5,9 +5,9 @@ Find unused/dead exports across your JavaScript and TypeScript codebase. Statica
 ## Installation
 
 ```bash
-npm install -g dead-exports
+npm install -g @mehmoodahmadq/dead-exports
 # or run without installing
-npx dead-exports
+npx @mehmoodahmadq/dead-exports
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ With `--json`, results are machine-readable and the process exits with code `1` 
 ## Programmatic API
 
 ```ts
-import { analyze } from 'dead-exports';
+import { analyze } from '@mehmoodahmadq/dead-exports';
 
 const result = await analyze({
   cwd: './src',

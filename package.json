@@ -1,5 +1,5 @@
 {
-  "name": "dead-exports",
+  "name": "@mehmoodahmadq/dead-exports",
   "version": "0.1.0",
   "description": "Find unused exports across your JavaScript/TypeScript codebase",
   "type": "module",
